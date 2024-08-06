@@ -1,0 +1,15 @@
+create or replace procedure p_data(in_empno number) is
+  lv_ename varchar2(10);
+begin
+  select ename into lv_ename from emp b where b.empno = in_empno;
+  begin
+    select ename into lv_ename from emp b where b.empno = in_empno;
+    begin
+      select ename into lv_ename from emp b where b.empno = in_empno;
+    end;
+  end;
+exception
+  when others then
+    null;
+end;
+
